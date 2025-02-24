@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALLZ - Website ballchyn new</title>
+    <style>
+        /* CSS sama seperti di styles.css, disatukan di sini */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0e6ff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(45deg, #9b59b6, #e91e63);
+            padding: 20px 0;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0 0 10px 10px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links li a.download-btn {
+            background: white;
+            color: #e91e63;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .burger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .content-section {
+            padding: 50px 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .hero h1, .about-content h1, .gallery-content h1, .contact-content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .phone-mockup {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .phone-img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .features {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #9b59b6;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 50px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #9b59b6;
+            margin-bottom: 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .gallery-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-content form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-content label {
+            text-align: left;
+            font-weight: bold;
+            color: #9b59b6;
+        }
+
+        .contact-content input, .contact-content textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-content textarea {
+            height: 100px;
+        }
+
+        .contact-content button {
+            padding: 10px 20px;
+            background: #9b59b6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .contact-content button:hover {
+            background: #e91e63;
+        }
+
+        footer {
+            background: #9b59b6;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-links img {
+            width: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .burger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(155, 89, 182, 0.9);
+                padding: 20px;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .content-section {
+                padding: 30px 10px;
+            }
+
+            .phone-mockup, .gallery-img {
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BALLZ</div>
+            <div class="burger">☰</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#download" class="download-btn">Download</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content-section hero active" id="home">
+        <h1>Website ballchyn terbaru dan Aman</h1>
+        <p>Halo selamat datang website Ballchyn bersenang senanglah melihat isi dari website yang menyebalkan ini saya harap kalian bisa menikmatinya.</p>
+        <div class="phone-mockup">
+            <img src="images/phone-mockup.png" alt="Phone Mockup" class="phone-img">
+        </div>
+        <section class="features">
+            <h2>Features you love</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <img src="images/simple-icon.png" alt="Simple" class="feature-icon">
+                    <h3>Simple</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="images/customize-icon.png" alt="Customize" class="feature-icon">
+                    <h3>Customize</h3>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="images/secure-icon.png" alt="Secure" class="feature-icon">
+                    <h3>Secure</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="content-section about-content" id="about">
+        <h1>About BALLZ</h1>
+        <p>BALLZ adalah website yang dirancang untuk membantu menampilkan content yang menyebalkan dan tidak bermanfaat untuk membantu mereka menghilangkan strees dan frustasi akibat tekanan teknologi dan tekanan hal eksternal. Kami fokus pada desain yang sederhana, aman, dan dapat disesuaikan untuk kebutuhan Anda.</p>
+        <p>Kami didirikan pada tahun 2025 dengan misi menyediakan solusi terbaik bagi mereka yang ingin menghilangkan stress dan frustasi. Tim kami terdiri dari desainer dan pengembang berpengalaman yang berdedikasi untuk menciptakan pengalaman pengguna yang luar biasa.</p>
+    </section>
+
+    <section class="content-section gallery-content" id="gallery">
+        <h1>Gallery</h1>
+        <div class="gallery-grid">
+            <img src="images/phone-mockup.png" alt="Screenshot 1" class="gallery-img">
+            <img src="images/phone-mockup.png" alt="Screenshot 2" class="gallery-img">
+            <img src="images/phone-mockup.png" alt="Screenshot 3" class="gallery-img">
+        </div>
+    </section>
+
+    <section class="content-section contact-content" id="contact">
+        <h1>Contact Us</h1>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle menu burger untuk ponsel
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Navigasi tab/toggle halaman
+        const navItems = document.querySelectorAll('.nav-links a');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = item.getAttribute('href').substring(1);
+                contentSections.forEach(section => section.classList.remove('active'));
+                document.getElementById(sectionId).classList.add('active');
+                navLinks.classList.remove('active'); // Tutup menu burger setelah klik
+            });
+        });
+
+        // Fungsi untuk tombol download
+        const downloadBtn = document.querySelector('.download-btn');
+        downloadBtn.addEventListener('click', () => {
+            alert('Fitur download akan mengunduh file APK atau link aplikasi. Silakan ganti dengan URL atau file yang sesuai.');
+            // Ganti alert ini dengan logika download yang sebenarnya, misalnya:
+            // window.location.href = 'https://example.com/app.apk';
+        });
+
+        // Fungsi sederhana untuk form contact
+        const contactForm = document.querySelector('.contact-content form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                alert(`Terima kasih, ${name}! Pesan Anda telah dikirim. Email: ${email}, Pesan: ${message}`);
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
