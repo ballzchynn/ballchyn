@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOAPP - Mobile App Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0e6ff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(45deg, #9b59b6, #e91e63);
+            padding: 20px 0;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0 0 10px 10px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links li a.download-btn {
+            background: white;
+            color: #e91e63;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .burger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .hero {
+            padding: 50px 20px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .phone-mockup {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .phone-img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .features {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #9b59b6;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 50px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #9b59b6;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #9b59b6;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-links img {
+            width: 30px;
+        }
+
+        /* Responsivitas untuk ponsel */
+        @media (max-width: 768px) {
+            .burger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(155, 89, 182, 0.9);
+                padding: 20px;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MOAPP</div>
+            <div class="burger">☰</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#download" class="download-btn">Download</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Mobile App Landing Page Template</h1>
+            <p>The one and only solution kind of mobile app landing page. Just change the screenshots and texts, and you are good to go.</p>
+            <div class="phone-mockup">
+                <img src="phone-mockup.png" alt="Phone Mockup" class="phone-img">
+            </div>
+        </div>
+    </header>
+    <section class="features" id="features">
+        <h2>Features you love</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <img src="simple-icon.png" alt="Simple" class="feature-icon">
+                <h3>Simple</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="feature-card">
+                <img src="customize-icon.png" alt="Customize" class="feature-icon">
+                <h3>Customize</h3>
+                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="feature-card">
+                <img src="secure-icon.png" alt="Secure" class="feature-icon">
+                <h3>Secure</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-links">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle menu burger untuk ponsel
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Fungsi sederhana untuk tombol download
+        const downloadBtn = document.querySelector('.download-btn');
+        downloadBtn.addEventListener('click', () => {
+            alert('Fitur download akan mengunduh file APK atau link aplikasi. Silakan ganti dengan URL atau file yang sesuai.');
+            // Ganti alert ini dengan logika download yang sebenarnya, misalnya:
+            // window.location.href = 'https://example.com/app.apk';
+        });
+    </script>
+</body>
+</html>
